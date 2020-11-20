@@ -40,9 +40,9 @@ require('./config/passport')(passport);
 //app.use('/posts', rtsIndex);
 
 // Port Number
-const port = 3000;
+const PORT = process.env.PORT || 3003;
 
 // Start Server
-app.listen(port, () => {
-    console.log('Server started on port '+port);
-  });
+app.listen(PORT, () => {
+    console.log('Server started on port '+ PORT);
+});
