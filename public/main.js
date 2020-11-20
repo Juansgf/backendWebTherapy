@@ -1153,19 +1153,19 @@ class DashboardComponent {
             console.log("Entre a la funcion", data.body);
             if (data.body['success']) {
                 this.flashMessage.show('¡Publicación registrada!', { cssClass: 'alert-success', timeout: 3000 });
-                this.router.navigate(['/dashboard']);
+                this.router.navigate(['dashboard']);
                 this.disableFormNewPostForm();
             }
             else {
                 this.flashMessage.show('Algo salió mal', { cssClass: 'alert-danger', timeout: 3000 });
                 this.processing = false;
                 this.enableFormNewPostForm();
-                this.router.navigate(['/dashboard']);
+                this.router.navigate(['dashboard']);
             }
         });
     }
     reloadPosts() {
-        this.router.navigate(['/dashboard']);
+        this.router.navigate(['dashboard']);
     }
     ngOnInit() {
         this.authService.authenticatePorfile().subscribe(profile => {
@@ -1768,7 +1768,7 @@ class ShowPostService {
         return this.http.post('https://desolate-reef-90306.herokuapp.com/user/adminPosts', {});
     }
     reloadPosts() {
-        this.router.navigate(['/dashboard']);
+        this.router.navigate(['dashboard']);
     }
 }
 ShowPostService.ɵfac = function ShowPostService_Factory(t) { return new (t || ShowPostService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_services_auth_service__WEBPACK_IMPORTED_MODULE_2__["AuthService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"])); };
