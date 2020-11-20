@@ -41,7 +41,10 @@ require('./config/passport')(passport);
 
 // Port Number
 const PORT = process.env.PORT || 3003;
-
+app.get('/', (req, res) =>{
+  console.log("Respondiendo")
+  res.send("hola")
+})
 // Start Server
 app.listen(PORT, () => {
     console.log('Server started on port '+ PORT);
